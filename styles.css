@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.book-card {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#card-holder {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+}
