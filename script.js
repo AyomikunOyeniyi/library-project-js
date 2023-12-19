@@ -47,6 +47,7 @@ function createCard () {
 
         //to create remove buttons on all cards
         const rmvButton = document.createElement('button');
+        rmvButton.setAttribute('class', 'rmv-btn');
         rmvButton.textContent = 'Remove';
         rmvButton.addEventListener('click', () => {
             newLibrary = newLibrary.filter(item => item.title !== book.title);
@@ -57,6 +58,7 @@ function createCard () {
 
         //for toggle button
         const tglButton = document.createElement('button');
+        tglButton.setAttribute('class', 'tgl-btn')
         if (book.status == 'unread') {
             tglButton.textContent = 'Read';
         } else {
@@ -67,8 +69,12 @@ function createCard () {
         tglButton.addEventListener('click', () => {
             if (book.status == 'unread' ) {
                 book.status = 'read';
+                cardHolder.innerHTML = '';
+                createCard();
             } else {
                 book.status = 'unread';
+                cardHolder.innerHTML = '';
+                createCard();
             };
         });
         bookCard.appendChild(rmvButton);
