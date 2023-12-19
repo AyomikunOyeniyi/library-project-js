@@ -1,19 +1,56 @@
-html {
+html, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.book-card {
-    height: 200px;
+body {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+}
+
+.book-card {
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
+    box-shadow: 0px 5px 7px #858A8C;
 }
 
 #card-holder {
     display: grid;
     grid-template-columns: repeat(5,1fr);
     gap: 20px;
+    height: 500px;
+}
+
+.header {
+    height: 150px;
+    text-align: center;
+    box-shadow: 0px 5px 7px #858A8C;
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+}
+
+.rmv-btn, .tgl-btn {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #2dd4bf;
+    font-weight: bold;
 }
