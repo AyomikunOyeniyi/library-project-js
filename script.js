@@ -7,9 +7,6 @@ function Book(title, author, pages, status) {
     this.status = status;
 };
 
-// const theHobbit = new Book('The Hobbit','Tolkien','333','read');
-// const kiteRunner = new Book('Kite Runner', 'Hosseini', '784', 'unread');
-
 //function to add book to library
 function addBookToLibrary() {
     //DOM Manipulation for dialog inputs
@@ -32,8 +29,6 @@ function addBookToLibrary() {
    newLibrary.push(newBook);
 };
 
-// addBookToLibrary();
-
 // DOM Manipulation for book cards
 const cardHolder = document.querySelector('#card-holder');
 
@@ -46,7 +41,7 @@ function createCard () {
 
         for (let value in book) {
             const para = document.createElement('p');
-            para.textContent = newLibrary[i][value];
+            para.textContent =`${value} : ${book[value]}` ;
             bookCard.appendChild(para);
         };
 
@@ -59,8 +54,25 @@ function createCard () {
             createCard();
             console.log(newLibrary);
         });
-        bookCard.appendChild(rmvButton)
-    
+
+        //for toggle button
+        const tglButton = document.createElement('button');
+        if (book.status == 'unread') {
+            tglButton.textContent = 'Read';
+        } else {
+            tglButton.textContent = 'Unread';
+        };
+
+
+        tglButton.addEventListener('click', () => {
+            if (book.status == 'unread' ) {
+                book.status = 'read';
+            } else {
+                book.status = 'unread';
+            };
+        });
+        bookCard.appendChild(rmvButton);
+        bookCard.appendChild(tglButton);
         cardHolder.appendChild(bookCard);
     };
 }
